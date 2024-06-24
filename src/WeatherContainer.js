@@ -1,6 +1,7 @@
 import { getWeather } from './weather_api/weather_api.ts';
 import { useState, useEffect } from "react";
 import WeatherTile from './WeatherTile.js';
+import './WeatherContainer.css';
 
 export default function WeatherContainer() {
   const [weatherData, setWeatherData] = useState([]);
@@ -39,7 +40,7 @@ export default function WeatherContainer() {
   }, [weatherData]);
    
   return (
-    <div className="weatherContainer">
+    <div className="WeatherContainer">
       {weatherTiles}
     </div>
   );
