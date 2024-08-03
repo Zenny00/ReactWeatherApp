@@ -24,7 +24,7 @@ export default function WeatherContainer(props) {
       setWeatherData(response);     
     }
     fetchWeatherData();
-    }, []);
+    }, [props.num_days]);
    
   useEffect(() => {
     const weatherTiles = [];
