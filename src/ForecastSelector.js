@@ -1,5 +1,7 @@
+import { fetchZipResults } from './search_bar/search_bar.ts';
 
 export default function ForecastSelector(props) {
+  const result = fetchZipResults("21629");
   return (
     <div>
       <div>Select Forecast</div>
@@ -13,6 +15,9 @@ export default function ForecastSelector(props) {
         <button className="button" onClick={() => props.button_function(7)}>
         7 Days
         </button>
+      </div>
+      <div>
+        {result.latitude}
       </div>
     </div>
   );
