@@ -5,7 +5,20 @@ import usZips from 'us-zips';
  */
 
 export function fetchZipResults(searchQuery) {
-  const zipCode = usZips[searchQuery];
+  const zipCodes = [];
+  const keys = Object.keys(usZips);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
 
-  return zipCode;
+    // If the search matches any part of the key return the value
+    if (key.startsWith(searchQuery)) {
+      zipCodes.push(usZips[key]);
+    }
+  }
+
+  if (zipCodes.length === 0) {
+    zipCodes.push("No Results Found");
+  }
+
+  return zipCodes;
 }
