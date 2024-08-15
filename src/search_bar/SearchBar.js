@@ -1,5 +1,5 @@
 import logo from '../search.png';
-import { useState } form "react";
+import { useState } from "react";
 
 export default function SearchBar(props) {
   const [query, setQuery] = useState([]);
