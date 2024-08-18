@@ -9,11 +9,11 @@ const QueryList = ({results, query, setQuery}) => {
     
     for (var i = 0; i < results.length; i++) {
       var result = results[i];
-      const sanitizedQuery = query.replace("/\s+/g", " ").toLowerCase();
+      const sanitizedQuery = query.replace("/\s+/g", " ");
 
-      const indexOfQuery = result.zip.indexOf(sanitizedQuery);
-      const beforeQuery = result.zip.slice(0, indexOfQuery);
-      const afterQuery = result.zip.slice(indexOfQuery + sanitizedQuery.length);
+      const indexOfQuery = result?.zip?.indexOf(sanitizedQuery);
+      const beforeQuery = result?.zip?.slice(0, indexOfQuery);
+      const afterQuery = result?.zip?.slice(indexOfQuery + sanitizedQuery.length);
 
       if (indexOfQuery >= 0) {
         newShownResults.push({
@@ -21,7 +21,7 @@ const QueryList = ({results, query, setQuery}) => {
           normalText: sanitizedQuery,
           after: afterQuery,
         });
-      }
+      } 
     }
 
     setShownResults(newShownResults);
