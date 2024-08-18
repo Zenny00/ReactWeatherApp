@@ -17,7 +17,7 @@ export default function ForecastSelector(props) {
         </button>
       </div>
       <div>
-        {result[0].latitude}
+        {result[0].longitude}
       </div>
     </div>
   );

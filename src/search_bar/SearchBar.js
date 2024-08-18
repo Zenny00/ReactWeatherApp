@@ -2,9 +2,7 @@ import logo from "../search.png";
 import { useState } from "react";
 import "./SearchBar.css";
 
-export default function SearchBar(props) {
-  const [query, setQuery] = useState([]);
-
+const SearchBar = ({query, setQuery}) => {
   return (
     <div className="SearchBar">
       <img src={logo} alt="magnifying glass" height={16} width={16} /> 
@@ -15,4 +13,6 @@ export default function SearchBar(props) {
       />
     </div>
   );
-}
+};
+
+export default SearchBar;

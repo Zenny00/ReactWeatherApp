@@ -20,7 +20,12 @@ export function fetchZipResults(searchQuery) {
 
     // If the search matches any part of the key return the value
     if (key.startsWith(searchQuery)) {
-      zipCodes.push(usZips[key]);
+      var zipObj = {
+        latitude: usZips[key].latitude,
+        longitude: usZips[key].longitude,
+        zip: key,
+      };
+      zipCodes.push(zipObj);
     }
   }
 
