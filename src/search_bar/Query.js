@@ -1,4 +1,4 @@
-const Query = ({ before, normalText, after, query, setQuery }) => {
+export default function Query({ before, normalText, after, query, setQuery }) {
   const handleClick = () => {
     setQuery(`${before}${normalText}${after}`);
   };
@@ -20,6 +20,4 @@ const Query = ({ before, normalText, after, query, setQuery }) => {
       </td>
     </tr>
   );
-};
-
-export default Query;
+}

@@ -11,16 +11,17 @@ function App() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [num_days, setNumDays] = useState(undefined);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    const queryResults = fetchZipResults(query.replace("/\s+/g", " "));
+    const queryResults = fetchZipResults(query.replace(/\s+/g, " "));
     setResults(queryResults);
   }, [query]);
 
   return (
     <div>
-      <SearchBar query={query} setQuery={setQuery}/>
-      <QueryList results={results} query={query} setQuery={setQuery}/>
+      <SearchBar query={query} setQuery={setQuery} isLoading={isLoading}/>
+      <QueryList results={results} query={query} setQuery={setQuery} setLoading={setLoading} isLoading={isLoading}/>
       <ForecastSelector
         button_function={setNumDays}
       />

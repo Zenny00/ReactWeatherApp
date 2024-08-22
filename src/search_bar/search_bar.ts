@@ -13,9 +13,11 @@ import usZips from 'us-zips';
  *
  */
 export function fetchZipResults(searchQuery) {
+  const MAX_RESULTS = 100;
+
   const zipCodes = [];
   const keys = Object.keys(usZips);
-  for (var i = 0; i < keys.length; i++) {
+  for (var i = 0; i < keys.length && zipCodes.length < MAX_RESULTS; i++) {
     var key = keys[i];
 
     // If the search matches any part of the key return the value
